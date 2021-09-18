@@ -1,25 +1,34 @@
 import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
 import {AiOutlineHeart} from 'react-icons/ai'
+import ToggleExplanation from "./ToggleExplanation";
+import { MediaTypes } from "./helpers/MediaTypes";
+import Button from "react-bootstrap/Button";
 
+const PicCard = ({ title, hdurl, url, explanation, date, media_type, handleToggleLiked }) => {
 
-
-
-const PicCard = ({ title, hdurl, explanation }) => {
   return (
     
-    <Card >
-      
+    <Card > 
+      <Card.Title>Spacestagram</Card.Title> 
+
       <Card.Body>
-      <h3>Nasa's Photo of the day</h3>
-      <div className="wrapper">
+      <Card.Subtitle>Astronomy Photo of the day</Card.Subtitle>
+      <Card.Subtitle>{date}</Card.Subtitle>
+      <ToggleExplanation className="explanation" explanation={explanation}/>
+      {/* <div className="wrapper">
         <AiOutlineHeart className="heart" />
+        </div> */}
+        {MediaTypes({media_type, title, url, hdurl})}
+        <div className="btn-wrapper">
+        <Button
+          variant="outline-dark"
+          className="like"
+          onClick={() => handleToggleLiked()}
+        >Like</Button>
         </div>
-        <Card.Img variant="top" src={hdurl} fluid='true' />
         <h5 > 
         {title}
         </h5>
-
       </Card.Body>
     </Card>
   );

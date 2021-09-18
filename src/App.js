@@ -1,12 +1,12 @@
 import './App.css';
 import './components/picCard.css'
-import PicList from './components/PicList';
+import PicContainer from './components/PicContainer';
 
 function App() {
   return (
-    <div className="App">
-      <PicList />
-    </div>
+    <>
+      <PicContainer />
+    </>
   );
 }
 
