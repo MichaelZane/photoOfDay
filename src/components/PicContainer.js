@@ -3,6 +3,7 @@ import axios from "axios";
 import PicCard from "./PicCard";
 import { GetCurrentDate } from "./helpers/GetCurrentDate";
 import { GetPriorDates } from "./helpers/GetPriorDates";
+import Spinner from 'react-bootstrap/Spinner'
 
 const PicList = () => {
   const [pic, setPic] = useState([]);
@@ -25,7 +26,8 @@ const PicList = () => {
 
   return (
     <>
-      {pic.map((card) => (
+    {pic && pic.length > 0 ? (
+      pic.map((card) => (
         <PicCard
           key={card.title}
           title={card.title}
@@ -36,7 +38,12 @@ const PicList = () => {
           date={card.date}
           copyright={card.copyright}
         />
-      ))}
+      )).reverse()
+    ) : (
+      <Spinner animation="border" role="status" variant="primary" >
+        <span className="visually-hidden">Loading...</span>
+      </Spinner>
+    )}
     </>
   );
 };

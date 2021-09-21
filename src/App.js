@@ -10,7 +10,10 @@ function App() {
       <p className="main-subtitle">
         powered by Nasa's astronomy picture of the day API
       </p>
-      <b className="link-github"><a href="https://github.com/MichaelZane/photoOfDay">See My Github Repo</a></b>
+      <div className="link-wrapper">
+        <b id="link-github"><a href="https://github.com/MichaelZane/photoOfDay">See My Github Repo</a></b>
+      </div>
+      
       <PicContainer />
     </>
   );

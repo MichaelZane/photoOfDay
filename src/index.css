@@ -26,7 +26,13 @@ body {
   color: azure;
 }
 
-.link-github {
-  margin-left: 7%;
+.link-wrapper {
+  text-align: center;
 }
+
+#link-github a {
+  text-decoration: none;
+  color: skyblue;
+}
+
 
