@@ -35,4 +35,10 @@ body {
   color: skyblue;
 }
 
+@media screen and (max-width: 501px){
+  .title-wrapper {
+    text-align: center;
+  }  
+}
+
 
