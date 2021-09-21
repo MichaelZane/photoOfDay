@@ -1,23 +1,18 @@
 import { useState, useEffect } from "react";
-import axios from 'axios'
+import axios from "axios";
 import PicCard from "./PicCard";
+import { GetCurrentDate } from "./helpers/GetCurrentDate";
+import { GetPriorDates } from "./helpers/GetPriorDates";
 
-
-const PicList = ({likedPhoto, totalLikes}) => {
+const PicList = () => {
   const [pic, setPic] = useState([]);
-  const [toggleLiked, setToggleLiked] = useState(likedPhoto)
-  const [likes, setLikes] = useState(0)
 
-  console.log("LIKES",likes)
-  const handleToggleLiked = () => {
-    setToggleLiked((toggleLiked) => !toggleLiked)
-    setLikes((likes) => (toggleLiked ? likes - 1 : likes + 1))
-  }
-  
+  const apodKey = process.env.REACT_APP_API_KEY;
+
   useEffect(() => {
     axios
       .get(
-        `https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_API_KEY}`
+        `https://api.nasa.gov/planetary/apod?api_key=${apodKey}&end_date=${GetCurrentDate()}&start_date=${GetPriorDates()}`
       )
       .then((response) => {
         setPic(response.data);
@@ -30,17 +25,18 @@ const PicList = ({likedPhoto, totalLikes}) => {
 
   return (
     <>
-      <PicCard
-        title={pic.title}
-        explanation={pic.explanation}
-        hdurl={pic.hdurl}
-        url={pic.url}
-        media_type={pic.media_type}
-        date={pic.date}
-        copyright={pic.copyright}
-        handleToggleLiked={handleToggleLiked}
-      />
-      
+      {pic.map((card) => (
+        <PicCard
+          key={card.title}
+          title={card.title}
+          explanation={card.explanation}
+          hdurl={card.hdurl}
+          url={card.url}
+          media_type={card.media_type}
+          date={card.date}
+          copyright={card.copyright}
+        />
+      ))}
     </>
   );
 };

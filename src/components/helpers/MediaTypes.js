@@ -18,14 +18,13 @@ export const MediaTypes = ({media_type, title, url, hdurl}) => {
         )
       case("image"):
         return (
-          <div className="image-container">
+
             <a href={hdurl} className="astronomy-wrapper">
               <Image className="img" src={url} alt={title} />
             </a>
-          </div>
+          
         )
       default:
         return null
     }
   }
-

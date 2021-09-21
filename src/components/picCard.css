@@ -1,9 +1,26 @@
+h5 { 
+  margin-left: 33%;
+  width: 165px;
+  text-align: center;
+}
+.animate__heartBeat {
+  font-size: 1.5rem;
+}
+
 .card {
-  margin: 3%; 
+  
+  margin: 5%;
   border-radius: 5px;
 }
 .card-body {
+  background-color: #E1EBEE; 
   text-align: center;
+  width: 100%;
+  height: auto;
+}
+.card-text {
+  
+  margin: 4% 9%;
 }
 .wrapper .heart {
   transition: .4s;
@@ -11,29 +28,20 @@
   
 }
 .astronomy-wrapper {
-  padding: 10px;
+
+  width: 100%;
+  height: auto;
 }
-.img {
-  cursor: pointer;
-  max-height: 500px;
+.img {  
+  cursor: pointer; 
+  margin: 0;
+  border-radius: 5px;
+  width: 100%;
+  height: auto;
   filter: drop-shadow(6px 6px 12px rgba(0,0,0,0.45));
   transition: all 325ms ease-in-out;
 }
 
-.wrapper {
-  position: absolute;
-  top: .5px;
-  right: 16px;
-  padding: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,.1);
-  border-radius: 80px;
-  border-right: 50px;
-  background-color: #fafafa;
-  text-align: right;
-}
-.wrapper:hover .heart {
-  color: #f50057;
-}
 .bottom {
   font-size: medium;
 }
@@ -56,6 +64,23 @@ h4 {
   height: 100%;
 }
 
-.like {
+.like.btn.btn-outline-dark {
+  color: #f50057;
   
+}
+
+.btn-wrapper {
+  text-align: start;
+  margin-top: 3%;
+  width: 30%;
+}
+btn.btn-no-outline-info {
+  outline: none;
+  
+}
+.card-subtitle.h6 {
+  padding: 2%;
+}
+div .card-title.h5 {
+  font-weight: 700;
 }
