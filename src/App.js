@@ -4,7 +4,7 @@ import PicContainer from "./components/PicContainer";
 
 function App() {
   return (
-    <>
+    <div className="app-wrapper">
       <div className="title-wrapper">
         <h1 className="main-title">Spacestagram </h1>
 
@@ -21,7 +21,7 @@ function App() {
       </div>
 
       <PicContainer />
-    </>
+    </div>
   );
 }
 

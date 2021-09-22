@@ -8,6 +8,8 @@ const ToggleExplanation = ({ explanation }) => {
   return (
     <>
       <Button
+        bsPrefix="explanation"
+        as="div"
         variant="no-outline-info"
         onClick={() => setOpen(!open)}
         aria-controls="explanation-collapse-text"
@@ -17,7 +19,7 @@ const ToggleExplanation = ({ explanation }) => {
       </Button>
       <Collapse in={open}>
         <div id="explanation-collapse-text">
-          <Card.Text>{explanation}</Card.Text>
+          <Card.Text bsPrefix="explanation-text">{explanation}</Card.Text>
         </div>
       </Collapse>
     </>

@@ -1,26 +1,34 @@
-h5 { 
-  margin-left: 33%;
-  width: 165px;
-  text-align: center;
-}
 .animate__heartBeat {
   font-size: 1.5rem;
 }
 
-.card {
-  margin: 5%;
-  border-radius: 5px;
-  
-}
-.card-body {
-  
-  background-color: #E1EBEE; 
+.container {
+  margin: 0;
   text-align: center;
   width: 100%;
   height: auto;
-}
-.card-text {
   
+}
+.pic-title {
+
+  color: azure;
+  width: 100%;
+  margin: 3% 3% 0 ;
+}
+
+.pic-date {
+  text-align: center;
+  color: azure;
+  margin-bottom: 35px;
+}
+.explanation {
+  color:grey;
+  text-align: center;
+  margin-bottom: 2%;
+  
+}
+.explanation-text {
+  color: azure;
   margin: 4% 9%;
 }
 .wrapper .heart {
@@ -36,16 +44,12 @@ h5 {
 .img {  
   cursor: pointer; 
   margin: 0;
-  border-radius: 5px;
   width: 100%;
   height: auto;
   filter: drop-shadow(6px 6px 12px rgba(0,0,0,0.45));
   transition: all 325ms ease-in-out;
 }
 
-.bottom {
-  font-size: medium;
-}
 h4 {
   font-size: smaller;
 }
@@ -67,21 +71,17 @@ h4 {
 
 .like.btn.btn-outline-dark {
   color: #f50057;
-  
+  border-color: #f50057;
 }
 
 .btn-wrapper {
   text-align: start;
-  margin-top: 3%;
+  margin: 5px 7px 0;
   width: 30%;
 }
-btn.btn-no-outline-info {
-  outline: none;
-  
-}
-.card-subtitle.h6 {
-  padding: 2%;
-}
-div .card-title.h5 {
-  font-weight: 700;
+
+.post-wrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(0,22,40);
 }

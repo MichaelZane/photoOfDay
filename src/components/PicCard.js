@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Card from "react-bootstrap/Card";
+import Container from "react-bootstrap/Container";
 import { AiOutlineHeart, AiTwotoneHeart } from "react-icons/ai";
 import ToggleExplanation from "./ToggleExplanation";
 import { MediaTypes } from "./helpers/MediaTypes";
@@ -16,11 +16,10 @@ const PicCard = ({ title, hdurl, url, date, explanation, media_type }) => {
 
   return (
     <>
-      <Card>
-        <Card.Body>
-          <Card.Title>{title}</Card.Title>
+      <Container fluid="true">
+        <div className="post-wrapper">
+          <h5 className="pic-title">{title}</h5>
           <ToggleExplanation
-            className="explanation"
             explanation={explanation}
           />
 
@@ -42,9 +41,9 @@ const PicCard = ({ title, hdurl, url, date, explanation, media_type }) => {
               )}
             </Button>
           </div>
-          <Card.Title>{date}</Card.Title>
-        </Card.Body>
-      </Card>
+          <h5 className="pic-date">{date}</h5>
+        </div>
+      </Container>
     </>
   );
 };
